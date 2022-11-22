@@ -17,12 +17,10 @@
     <script>
       $(document).ready(function () {
         $(".bxslider").bxSlider({
-          auto: true,
-          speed: 500,
-          pause: 4000,
-          mode: "fade",
-          autoControls: true,
-          pager: true,
+          auto: true, // イメージ回転
+          speed: 500, // 次のイメージに変わるのにかかる時間
+          pause: 4000, // 一つのイメージが止まって見せる時間
+          mode: "fade", // イメージが変わる方式
         });
       });
     </script>
@@ -49,7 +47,7 @@
       </div>
 
       <div id="nearby-shop-list">
-        <!--위치탐색-->
+        <!--位置探索-->
         <div class="nearby-shop">
           <div class="nearby-shop-title">周辺のグルメ店</div>
           <div class="user-geolocation">
