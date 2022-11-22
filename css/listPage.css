@@ -1,0 +1,124 @@
+/* 検索機能 */
+.search {
+  width: 500px;
+  height: 32px;
+  font-size: 18px;
+  border: 3px solid #ff5c5d;
+  border-radius: 15px;
+  outline: none;
+  padding-left: 10px;
+  background-color: rgb(233, 233, 233);
+}
+
+.search-button {
+  width: 100px;
+  height: 32px;
+  background-color: #ff5c5d;
+  border: 3px solid #ff5c5d;
+  color: #fff5f4;
+  font-size: 13pt;
+  font-weight: 600;
+}
+
+/*検索結果*/
+.search-result {
+  margin-left: 120px;
+  margin-right: 120px;
+  margin-top: 100px;
+}
+
+.add-detailed-search {
+  margin-top: 25px;
+  float: left;
+  width: 25%;
+  height: 500px;
+  border: solid 1px grey;
+}
+
+.search-result-page {
+  margin-top: 25px;
+  font-size: 13pt;
+  width: 70%;
+  border: solid 1px red;
+  float: right;
+}
+
+ul.tabs {
+  margin: 0px;
+  padding: 0px;
+  list-style: none;
+}
+
+ul.tabs li {
+  display: inline-block;
+  background: #ff5c5d;
+  color: white;
+  padding: 10px 15px;
+  cursor: pointer;
+  width: 28%;
+}
+
+ul.tabs li.current {
+  background: #fff5f4;
+  color: #ff5c5d;
+}
+
+.tab-content {
+  display: none;
+  background: #e0e0e0;
+  padding: 12px;
+}
+
+.tab-content.current {
+  display: inherit;
+}
+
+.shop-list {
+  border: solid 1px blue;
+  height: 320px;
+  margin-top: 40px;
+  margin-left: 20px;
+  margin-right: 20px;
+}
+
+.textBox {
+  border: solid 1px red;
+  float: right;
+  width: 65%;
+  margin-top: 20px;
+  margin-right: 20px;
+}
+
+.bookmark {
+  text-align: right;
+  float: right;
+  margin-right: 20px;
+}
+
+.shop-img {
+  border: solid 1px green;
+  width: 28%;
+  height: 300px;
+  float: left;
+  margin-top: 20px;
+  margin-left: 20px;
+}
+
+.shop-title {
+  text-align: left;
+  font-size: 23pt;
+}
+
+.shop-intro {
+  text-align: left;
+  font-size: 13pt;
+  margin-top: 15px;
+  margin-left: 10px;
+}
+
+.shop-access {
+  text-align: left;
+  font-size: 13pt;
+  margin-top: 5pt;
+  margin-left: 10px;
+}
