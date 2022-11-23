@@ -6,6 +6,10 @@
   margin-bottom: 20px;
 }
 
+#top-header img {
+  width: 300px;
+}
+
 #main-contents {
   height: 500px;
 }
