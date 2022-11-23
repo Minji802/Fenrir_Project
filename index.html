@@ -4,14 +4,21 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>タベイコ</title>
     <script
       src="https://code.jquery.com/jquery-3.6.1.js"
       integrity="sha256-3zlB5s2uwoUzrXK3BT7AX3FyvojsraNFxCc2vC/7pNI="
       crossorigin="anonymous"
     ></script>
     <script type="text/javascript" src="js/geolocation.js"></script>
+    <script type="text/javascript" src="js/shopList.js"></script>
     <link rel="stylesheet" href="css/index.css" />
+    <script>
+      $(function () {
+        getUserLocation();
+        search_restaurant();
+      });
+    </script>
   </head>
   <body>
     <!-- HEADER 領域 -->
@@ -24,6 +31,19 @@
       -- 緯度、経度確認用 --
       <h4 id="latitude"></h4>
       <h4 id="longitude"></h4>
+
+      <hr />
+      <div>
+        NearBy
+        <select name="range" id="range">
+          <option value="1">300m</option>
+          <option value="2">500m</option>
+          <option value="3" selected>1000m</option>
+          <option value="4">2000m</option>
+          <option value="5">3000m</option>
+        </select>
+        <button id="searchBtn">검색</button>
+      </div>
     </div>
 
     <!-- Footer 領域 -->
