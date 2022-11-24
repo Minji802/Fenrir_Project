@@ -2,6 +2,8 @@
 // lat=35.680930
 // lng=139.766863
 
+let dataSet = [];
+
 function search_restaurant() {
   // when the button clicked
   $("#searchBtn").click(function () {
@@ -36,17 +38,41 @@ function doAjax(url, range, startNum) {
 // result of getting restaurant
 function successCall(data) {
   console.log(data);
-
   let shops = data.results.shop;
 
-  if (shops.length > 0) {
-    $.each(shops, function (i, s) {
-      //console.log(i);
-      // console.log(s);
-      //console.log(s.name);
-      let shopObj = JSON.stringify(s); // 객체를 json문자열로 변환
-      let content = `<div class="textBox"><div class="shop-title">${s.name}</div><div class="shop-access">${s.access}</div><hr /></div>`;
-      $("#search-list").append(content);
-    });
-  }
+  dataSet.push.apply(dataSet, shops);
+
+  // if (shops.length > 0) {
+  //   $.each(shops, function (i, s) {
+  //     //console.log(i);
+  //     // console.log(s);
+  //     //console.log(s.name);
+  //     let shopObj = JSON.stringify(s); // 객체를 json문자열로 변환
+  //     let content = `<div class="textBox"><div class="shop-title">${s.name}</div><div class="shop-access">${s.access}</div><hr /></div>`;
+  //     $("#search-list").append(content);
+  //   });
+  // }
+
+  pagination(dataSet);
 }
+
+function pagination(data) {
+  console.log("----------------");
+  console.log(data);
+  let list = $("#pagination");
+  list.pagination({
+    dataSource: data,
+    callback: function (data, pagination) {
+      let dataHtml = "<ul>";
+      $.each(data, function (index, item) {
+        dataHtml += "<li>" + index + "  " + item.name + "</li>";
+      });
+      dataHtml += "</ul>";
+      $("#search-list").html(dataHtml);
+    },
+  });
+}
+
+$(function () {
+  search_restaurant();
+});

@@ -10,15 +10,14 @@
       integrity="sha256-3zlB5s2uwoUzrXK3BT7AX3FyvojsraNFxCc2vC/7pNI="
       crossorigin="anonymous"
     ></script>
+    <script type="text/javascript" src="js/pagination.js"></script>
     <script type="text/javascript" src="js/geolocation.js"></script>
     <script type="text/javascript" src="js/shopList.js"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/paginationjs/2.1.4/pagination.css"
+    />
     <link rel="stylesheet" href="css/index.css" />
-    <script>
-      $(function () {
-        getUserLocation();
-        search_restaurant();
-      });
-    </script>
   </head>
   <body>
     <!-- HEADER 領域 -->
@@ -43,7 +42,11 @@
           <option value="5">3000m</option>
         </select>
         <button id="searchBtn">검색</button>
-        <div id="search-list"></div>
+        <div id="contentArea">
+          <div id="search-list"></div>
+          <div id="detail-shop"></div>
+          <div id="pagination"></div>
+        </div>
       </div>
     </div>
 
