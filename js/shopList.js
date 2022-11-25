@@ -39,23 +39,35 @@ function doAjax(url, range, startNum) {
 function successCall(data) {
   console.log(data);
   let shops = data.results.shop;
+  let cnt = data.results.results_available;
 
+  let url =
+    "http://webservice.recruit.co.jp/hotpepper/gourmet/v1/?key=3aed834ab74d67bd&lat=35.6773686&lng=139.7694908&format=jsonp" +
+    "&callback=successCall&count=100";
+  let range = $("#range").val();
+  let startNum = parseInt($("#startNum").text()) + 100; // 1 ~ 100, 101 ~ 200, 201 ~ 300, ....
+  $("#startNum").text(startNum); // 100以上　全ての情報を呼び出す
   dataSet.push.apply(dataSet, shops);
+  console.log(url);
 
-  // if (shops.length > 0) {
-  //   $.each(shops, function (i, s) {
-  //     //console.log(i);
-  //     // console.log(s);
-  //     //console.log(s.name);
-  //     let shopObj = JSON.stringify(s); // 객체를 json문자열로 변환
-  //     let content = `<div class="textBox"><div class="shop-title">${s.name}</div><div class="shop-access">${s.access}</div><hr /></div>`;
-  //     $("#search-list").append(content);
-  //   });
-  // }
-
-  pagination(dataSet);
+  if (parseInt(startNum / 100) != parseInt(cnt / 100) + 1) {
+    doAjax(url, range, startNum);
+  } else {
+    pagination(dataSet);
+    return;
+  }
 }
 
+// ページング処理
+/*Pagination Library - Normal(https://pagination.js.org/)*/
+//       $('#demo').pagination({
+//     dataSource: [1, 2, 3, 4, 5, 6, 7, ... , 195],
+//     callback: function(data, pagination) {
+//         // template method of yourself
+//         var html = template(data);
+//         dataContainer.html(html);
+//     }
+// })
 function pagination(data) {
   console.log("----------------");
   console.log(data);
