@@ -14,6 +14,11 @@
     <script type="text/javascript" src="js/geolocation.js"></script>
     <script type="text/javascript" src="js/shopList.js"></script>
     <link
+      rel="shortcut icon"
+      type="image/x-icon"
+      href="images/logo/favicon.ico"
+    />
+    <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/paginationjs/2.1.4/pagination.css"
     />
@@ -31,6 +36,7 @@
       <h4 id="latitude"></h4>
       <h4 id="longitude"></h4>
       <h4 id="startNum" style="display: none">1</h4>
+      <h4 id="loading"></h4>
       <hr />
       <div>
         NearBy
@@ -41,7 +47,7 @@
           <option value="4">2000m</option>
           <option value="5">3000m</option>
         </select>
-        <button id="searchBtn">검색</button>
+        <button id="searchBtn">確認</button>
         <div id="contentArea">
           <div id="search-list"></div>
           <div id="detail-shop"></div>
