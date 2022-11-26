@@ -8,12 +8,12 @@ function getUserLocation() {
     navigator.geolocation.getCurrentPosition(function (pos) {
       $("#latitude").html(pos.coords.latitude); // latitude
       $("#longitude").html(pos.coords.longitude); // longitude
+      lat = pos.coords.latitude;
+      lng = pos.coords.longitude;
+      console.log(lat);
+      console.log(lng);
     });
   } else {
     alert("このブラウザではGeolocationができません");
   }
 }
-
-$(function () {
-  getUserLocation();
-});
