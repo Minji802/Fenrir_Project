@@ -10,8 +10,8 @@ function getUserLocation() {
       $("#longitude").html(pos.coords.longitude); // longitude
       lat = pos.coords.latitude;
       lng = pos.coords.longitude;
-      console.log(lat);
-      console.log(lng);
+      console.log("lat: " + lat);
+      console.log("lng: " + lng);
     });
   } else {
     alert("このブラウザではGeolocationができません");

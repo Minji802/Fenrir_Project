@@ -49,7 +49,7 @@ function successCall(data) {
   let url =
     "http://webservice.recruit.co.jp/hotpepper/gourmet/v1/?key=3aed834ab74d67bd&lat=35.6773686&lng=139.7694908&format=jsonp" +
     "&callback=successCall&count=100";
-  let range = $("#range").val();
+  let range = $("#range2").val();
   let startNum = parseInt($("#startNum").text()) + 100; // 1 ~ 100, 101 ~ 200, 201 ~ 300, .... 100以上　全ての情報を呼び出す
   $("#startNum").text(startNum);
   console.log(url);
@@ -68,7 +68,7 @@ function successCall(data) {
   //   return;
   // }
 
-  // index.htmlの五つのレストラン紹介の部分
+  // index.htmlの一番近い五つのレストラン紹介の部分
   let content = "";
   if (shops.length != 0) {
     $.each(shops, function (i, s) {
@@ -83,32 +83,4 @@ function successCall(data) {
     $("#search-list").css("flex-wrap", "wrap");
     $("#search-list").css("justify-content", "center");
   }
-}
-
-/* ページング処理*/
-/*Pagination Library - Normal(https://pagination.js.org/)*/
-//   使い方
-//       $('#demo').pagination({
-//     dataSource: [1, 2, 3, 4, 5, 6, 7, ... , 195],
-//     callback: function(data, pagination) {
-//         // template method of yourself
-//         var html = template(data);
-//         dataContainer.html(html);
-//     }
-// })
-function pagination(data) {
-  console.log("----------------");
-  console.log(data);
-  let list = $("#pagination");
-  list.pagination({
-    dataSource: data,
-    callback: function (data, pagination) {
-      let dataHtml = "<ul>";
-      $.each(data, function (index, item) {
-        dataHtml += "<li>" + index + "  " + item.name + "</li>";
-      });
-      dataHtml += "</ul>";
-      $("#search-list").html(dataHtml);
-    },
-  });
 }

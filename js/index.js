@@ -1,13 +1,3 @@
-// bxslider
-function slider() {
-  $(".bxslider").bxSlider({
-    auto: true, // イメージ回転
-    speed: 500, // 次のイメージに変わるのにかかる時間
-    pause: 4000, // 一つのイメージが止まって見せる時間
-    mode: "fade", // イメージが変わる方式
-  });
-}
-
 $(function () {
   $("header").load("header.html");
   $("footer").load("footer.html");
@@ -22,3 +12,13 @@ $(function () {
     1
   ); // url, range, startNum
 });
+
+// bxslider
+function slider() {
+  $(".bxslider").bxSlider({
+    auto: true, // イメージ回転
+    speed: 500, // 次のイメージに変わるのにかかる時間
+    pause: 4000, // 一つのイメージが止まって見せる時間
+    mode: "fade", // イメージが変わる方式
+  });
+}
