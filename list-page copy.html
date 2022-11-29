@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>検索結果</title>
+    <link rel="stylesheet" href="css/listPage.css" />
+    <link rel="stylesheet" href="css/index.css" />
+    <link
+      rel="shortcut icon"
+      type="image/x-icon"
+      href="images/logo/favicon.ico"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/paginationjs/2.1.4/pagination.css"
+    />
+    <script src="http://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script type="text/javascript" src="js/list-page.js"></script>
+    <script src="js/geolocation.js"></script>
+    <script src="js/shopList.js"></script>
+    <script src="js/list-page.js"></script>
+    <script src="js/pagination.js"></script>
+  </head>
+  <body>
+    <!-- HEADER 領域 -->
+    <header></header>
+
+    <!-- Main 領域  -->
+    <main>
+      <!-- 検索欄 -->
+      <div class="searchBox">
+        <input
+          type="text"
+          class="search"
+          value="店の名前、アドレスを入力してください"
+        />
+        <input type="button" class="search-button" value="確認" />
+      </div>
+
+      <div>
+        <!--詳細条件入力-->
+        <div class="search-result">
+          <div class="add-detailed-search">
+            <div>詳細条件追加</div>
+            <div>カード決済可能(card)</div>
+            <div>子供連れ可能(child)</div>
+            <div>ペット連れ可能(pet)</div>
+          </div>
+
+          <!--検索結果-->
+          <div id="search-list"></div>
+          <div id="pagination"></div>
+          <div class="search-result-page">
+            <div class="container">
+              <!-- tab menu 上段 -->
+              <ul class="tabs">
+                <li class="tab-link current" data-tab="tab-1">近い順</li>
+                <li class="tab-link" data-tab="tab-2">評価順</li>
+                <li class="tab-link" data-tab="tab-3">投稿順</li>
+              </ul>
+              <!-- tab menu 内容 -->
+              <div id="tab-1" class="tab-content current">
+                <select name="range" id="range">
+                  <option value="1">300m</option>
+                  <option value="2">500m</option>
+                  <option value="3" selected>1000m</option>
+                  <option value="4">2000m</option>
+                  <option value="5">3000m</option>
+                </select>
+                <div class="search-list">
+                  <div class="shop-img">Image</div>
+                  <div class="textBox">
+                    <div class="bookmark">お気に入り</div>
+                    <div class="shop-title">店の名前</div>
+                    <div class="shop-info">
+                      <div class="shop-access">Access</div>
+                      <hr />
+                      <div class="shop-intro">Introduce</div>
+                      <div class="shop-adress">address</div>
+                      <div class="shop-budget">budget</div>
+                      <div class="shop-card">card</div>
+                      <div class="shop-starPoint">★★★★☆ star-point</div>
+                      <div class="shop-reviewCount">review</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div id="tab-2" class="tab-content">
+                <div>まだ準備中です。少々お待ちください。</div>
+              </div>
+              <div id="tab-3" class="tab-content">
+                <div>まだ準備中です。少々お待ちください。</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <!-- Footer 領域 -->
+    <footer></footer>
+  </body>
+</html>

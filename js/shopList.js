@@ -48,6 +48,7 @@ function successCall(data) {
   dataSet.push.apply(dataSet, shops);
 
   if (changeVal) {
+    /* list-page.htmlで見せる*/
     console.log(changeVal);
     let url =
       "http://webservice.recruit.co.jp/hotpepper/gourmet/v1/?key=3aed834ab74d67bd&lat=35.6773686&lng=139.7694908&format=jsonp" +
@@ -73,7 +74,7 @@ function successCall(data) {
       return;
     }
   } else {
-    // index.htmlの一番近い五つのレストラン紹介の部分
+    /*index.htmlの一番近い五つのレストラン紹介の部分*/
     let content = "";
     if (shops.length != 0) {
       $.each(shops, function (i, s) {
@@ -91,7 +92,7 @@ function successCall(data) {
   }
 }
 
-/* ページング処理*/
+/* list-page.html & ページング処理*/
 function pagination(data) {
   console.log("----------------");
   console.log(data);
@@ -125,12 +126,12 @@ function pagination(data) {
                   <div class="shop-access">${s.access}</div>
                   <hr />
                   <div class="shop-intro">
-                    ${s.catch}
+                    ~${s.catch}~
                   </div>
-                  <div class="shop-adress">${s.address}</div>
-                  <div class="shop-budget">${s.budget.name}</div>
-                  <div class="shop-card">${s.card}</div>
-                  <div class="shop-starPoint">★★★★☆ star-point</div>
+                  <div class="shop-adress">住所：${s.address}</div>
+                  <div class="shop-budget">予算：${s.budget.name}</div>
+                  <div class="shop-card">カード決済：${s.card}</div>
+                  <div class="shop-starPoint">★★★★☆ （？ / 5.0）</div>
                   <div class="shop-reviewCount">review count</div>
                 </div>
               </div>

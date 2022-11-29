@@ -24,8 +24,48 @@
 
     <!-- Main 領域  -->
     <main>
-      <!--検索結果-->
-      <div id="search-list"></div>
+      <!--再検索-->
+      <div class="add-detailed-search">
+        <div>
+          <label>
+            <input type="checkbox" id="card_check" />
+            card
+          </label>
+        </div>
+        <div>
+          <label>
+            <input type="checkbox" id="child_check" />
+            children
+          </label>
+        </div>
+        <div>
+          <label>
+            <input type="checkbox" id="pet_check" />
+            pet
+          </label>
+        </div>
+        <div>
+          <button id="filterBtn" onclick="filterSearch();">
+            filter search
+          </button>
+        </div>
+      </div>
+      <div class="searchBackground">
+        <div class="searchBox2">
+          <strong>あなたの</strong>
+          <select id="range2">
+            <option value="1" selected="selected">300</option>
+            <option value="2">500</option>
+            <option value="3">1000</option>
+            <option value="4">2000</option>
+            <option value="5">3000</option>
+          </select>
+          <strong>ｍ 周りのレストラン</strong>
+          <input type="button" class="search-button" value="確認" />
+        </div>
+        <!--検索結果-->
+        <div id="search-list"></div>
+      </div>
       <div id="pagination"></div>
     </main>
 
