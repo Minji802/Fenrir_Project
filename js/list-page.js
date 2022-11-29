@@ -16,7 +16,7 @@ $(function () {
 });
 
 // tab menu
-$(document).ready(function () {
+function tabMenu() {
   $("ul.tabs li").click(function () {
     var tab_id = $(this).attr("data-tab");
 
@@ -24,6 +24,6 @@ $(document).ready(function () {
     $(".tab-content").removeClass("current");
 
     $(this).addClass("current");
-    $("#" + tab_id).addClass("current");
+    $("." + tab_id).addClass("current");
   });
-});
+}

@@ -1,20 +1,7 @@
 /*再検索*/
-.add-detailed-search {
-  position: fixed;
-  width: 100px;
-  height: 300px;
-  top: 350px;
-  left: 150px;
-  border: 5px solid black;
-}
-
-/* .research {
-} */
-
 .searchBox2 {
   width: 100vw;
   height: 38px;
-  margin-top: 35px;
   top: 0px;
   position: sticky;
   z-index: 1;
@@ -35,11 +22,28 @@
   margin-top: 3px;
 }
 
+.search-list-shop {
+  margin: 10px auto;
+  display: flex;
+}
+
+/*詳細条件*/
+.add-detailed-search {
+  width: 100px;
+  height: 300px;
+  margin-top: 25px;
+  margin-left: 150px;
+  border: 5px solid #ff5c5d;
+  background-color: #fff5f4;
+}
+
 /*検索結果*/
 #search-list {
   display: flex;
+  position: relative;
   justify-content: center;
-  margin-left: 150px;
+  margin-left: -50px;
+  flex: 1;
 }
 
 .search-result-page {
@@ -47,7 +51,7 @@
   margin-top: 25px;
   font-size: 13pt;
   width: 70%;
-  border: solid 1px red;
+  min-width: 653px;
 }
 
 /*検索結果 - tab menu*/
@@ -73,14 +77,18 @@ ul.tabs li.current {
 
 .tab-content {
   display: none;
+  border-left: solid 5px #ff5c5d;
+  border-right: solid 5px #ff5c5d;
+  border-top: solid 3px #ff5c5d;
+  border-bottom: solid 3px #ff5c5d;
 }
 
 .tab-content:hover {
   cursor: pointer;
   background-color: #fff5f4;
   transition: all 0.3s ease-out;
-  border-bottom: 1px dotted #ff5c5d;
-  border-top: 1px dotted #ff5c5d;
+  border-bottom: 5px dotted #ff5c5d;
+  border-top: 5px dotted #ff5c5d;
 }
 
 .tab-content.current {
@@ -98,6 +106,7 @@ ul.tabs li.current {
 .textBox {
   width: 80%;
   margin-left: 20px;
+  margin-right: 20px;
 }
 
 .bookmark {
@@ -123,8 +132,8 @@ ul.tabs li.current {
 
 .shop-intro {
   font-size: 13pt;
-  margin-top: 15px;
-  margin-bottom: 15px;
+  margin-top: 7px;
+  margin-bottom: 7px;
   text-align: center;
 }
 
@@ -133,9 +142,11 @@ ul.tabs li.current {
   margin-top: 5pt;
 }
 
+/*paging*/
 #pagination {
   margin-top: 20px;
   position: relative;
   display: flex;
   justify-content: center;
+  margin-left: 300px;
 }

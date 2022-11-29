@@ -79,7 +79,7 @@ function successCall(data) {
     if (shops.length != 0) {
       $.each(shops, function (i, s) {
         let shopObj = JSON.stringify(s);
-        content = `<div class="shop-info" onclick='ShopDetail(${shopObj});'>
+        content = `<div class="shop-info" onclick='shopDetail(${shopObj});'>
    <div class="shop-img"><img src="${s.photo.pc.l}"></div>
   <div class="shop-title">${s.name}</div>
   </div>`;
@@ -106,17 +106,18 @@ function pagination(data) {
         <div class="container">
           <!-- tab menu 上段始まり -->
           <ul class="tabs">
-          <li class="tab-link current" data-tab="tab-1">近い順</li>
-          <li class="tab-link" data-tab="tab-2">評価順</li>
-          <li class="tab-link" data-tab="tab-3">投稿順</li>
+          <li class="tab-link current" data-tab="tab-1" onclick="tabMenu()">近い順</li>
+          <li class="tab-link" data-tab="tab-2" onclick="tabMenu()">評価順</li>
+          <li class="tab-link" data-tab="tab-3" onclick="tabMenu()">投稿順</li>
           </ul>
           <!-- tab menu 上段終わり -->`;
 
         $.each(data, function (i, s) {
-          console.log(s);
+          //console.log(s);
+          let shopObj = JSON.stringify(s);
           dataHtml += `
           <!-- tab menu 内容始まり -->
-          <div id="tab-1" class="tab-content current">
+          <div class="tab-content current tab-1" onclick='shopDetail(${shopObj});'>
             <div class="shop-list">
               <div class="shop-img"><img src="${s.photo.pc.l}"></div>
               <div class="textBox">
@@ -131,7 +132,7 @@ function pagination(data) {
                   <div class="shop-adress">住所：${s.address}</div>
                   <div class="shop-budget">予算：${s.budget.name}</div>
                   <div class="shop-card">カード決済：${s.card}</div>
-                  <div class="shop-starPoint">★★★★☆ （？ / 5.0）</div>
+                  <div class="shop-starPoint">★★★★☆ ( ? / 5.0)</div>
                   <div class="shop-reviewCount">review count</div>
                 </div>
               </div>
@@ -139,11 +140,11 @@ function pagination(data) {
           </div>`;
         });
 
-        dataHtml += `<div id="tab-2" class="tab-content">
-        <div>まだ準備中です。少々お待ちください。</div>
+        dataHtml += `<div class="tab-content tab-2">
+        <div>評価順はまだ準備中です。少々お待ちください。</div>
       </div>
-      <div id="tab-3" class="tab-content">
-      <div>まだ準備中です。少々お待ちください。</div>
+      <div class="tab-content tab-3">
+      <div>投稿順はまだ準備中です。少々お待ちください。</div>
       </div>
       <!-- tab menu 内容終わり --></div></div>`;
         $("#search-list").html(dataHtml);

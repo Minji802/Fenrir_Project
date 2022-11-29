@@ -16,7 +16,11 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/paginationjs/2.1.4/pagination.css"
     />
+    <link rel="stylesheet" href="css/detail-page.css" />
     <script src="http://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script type="text/javascript" src="js/shop-detail.js"></script>
+    <script type="text/javascript" src="js/starpoint.js"></script>
+    <script type="text/javascript" src="js/review-page.js"></script>
   </head>
   <body>
     <!-- HEADER 領域 -->
@@ -25,31 +29,6 @@
     <!-- Main 領域  -->
     <main>
       <!--再検索-->
-      <div class="add-detailed-search">
-        <div>
-          <label>
-            <input type="checkbox" id="card_check" />
-            card
-          </label>
-        </div>
-        <div>
-          <label>
-            <input type="checkbox" id="child_check" />
-            children
-          </label>
-        </div>
-        <div>
-          <label>
-            <input type="checkbox" id="pet_check" />
-            pet
-          </label>
-        </div>
-        <div>
-          <button id="filterBtn" onclick="filterSearch();">
-            filter search
-          </button>
-        </div>
-      </div>
       <div class="searchBackground">
         <div class="searchBox2">
           <strong>あなたの</strong>
@@ -63,10 +42,41 @@
           <strong>ｍ 周りのレストラン</strong>
           <input type="button" class="search-button" value="確認" />
         </div>
-        <!--検索結果-->
-        <div id="search-list"></div>
+        <div class="search-list-shop">
+          <!--詳細条件-->
+          <div class="add-detailed-search">
+            <div>
+              <label>
+                <input type="checkbox" id="card_check" />
+                card
+              </label>
+            </div>
+            <div>
+              <label>
+                <input type="checkbox" id="child_check" />
+                children
+              </label>
+            </div>
+            <div>
+              <label>
+                <input type="checkbox" id="pet_check" />
+                pet
+              </label>
+            </div>
+            <div>
+              <button id="filterBtn" onclick="filterSearch();">
+                filter search
+              </button>
+            </div>
+          </div>
+          <!--検索結果-->
+          <div id="search-list"></div>
+        </div>
       </div>
+      <!--paging-->
       <div id="pagination"></div>
+      <!--shop detail-->
+      <div id="detail-shop"></div>
     </main>
 
     <!-- Footer 領域 -->
