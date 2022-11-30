@@ -30,7 +30,7 @@
         <div class="searchBox2">
           <strong>あなたの</strong>
           <select id="range2">
-            <option value="1" selected="selected">300</option>
+            <option value="1" selected>300</option>
             <option value="2">500</option>
             <option value="3">1000</option>
             <option value="4">2000</option>
@@ -45,24 +45,30 @@
             <div>
               <label>
                 <input type="checkbox" id="card_check" />
-                card
+                カード決済
               </label>
             </div>
             <div>
               <label>
                 <input type="checkbox" id="child_check" />
-                children
+                子供連れ
               </label>
             </div>
             <div>
               <label>
                 <input type="checkbox" id="pet_check" />
-                pet
+                ペット連れ
               </label>
             </div>
             <div>
-              <button id="filterBtn" onclick="filterSearch();">
-                filter search
+              <label>
+                <input type="checkbox" id="parking_check" />
+                駐車可能
+              </label>
+            </div>
+            <div class="add-detailed-search-button">
+              <button onclick='filterSearch();''>
+               詳細検索
               </button>
             </div>
           </div>
@@ -79,10 +85,14 @@
     <!-- Footer 領域 -->
     <footer></footer>
   </body>
+
+  <!--shop list Page-->
   <script src="js/geolocation.js"></script>
   <script src="js/pagination.js"></script>
   <script src="js/shop-list.js"></script>
   <script src="js/list-page.js"></script>
+
+  <!--shop detail Page-->
   <script src="js/shop-detail.js"></script>
   <script src="js/starpoint.js"></script>
   <script src="js/review-page.js"></script>

@@ -30,12 +30,35 @@
 
 /*詳細条件*/
 .add-detailed-search {
-  width: 100px;
-  height: 300px;
+  width: 140px;
+  height: 226px;
   margin-top: 25px;
   margin-left: 150px;
   border: 5px solid #ff5c5d;
   background-color: #fff5f4;
+}
+
+.add-detailed-search div {
+  margin-top: 13px;
+}
+
+.add-detailed-search label {
+  margin-left: 13px;
+}
+
+.add-detailed-search-button {
+  text-align: center;
+}
+
+.add-detailed-search-button button {
+  margin-top: 20px;
+  width: 100px;
+  height: 32px;
+  background-color: #ff6e6e;
+  border: 3px solid #ff6e6e;
+  color: #fff5f4;
+  cursor: pointer;
+  text-align: center;
 }
 
 /*検索結果*/
@@ -45,6 +68,14 @@
   justify-content: center;
   margin-left: -50px;
   flex: 1;
+}
+
+#loading {
+  font-size: 21pt;
+}
+
+#total {
+  font-size: 15pt;
 }
 
 .search-result-page {
@@ -69,6 +100,8 @@ ul.tabs li {
   padding: 10px 15px;
   cursor: pointer;
   width: 28%;
+  text-align: center;
+  font-size: 17pt;
 }
 
 ul.tabs li.current {
@@ -94,6 +127,26 @@ ul.tabs li.current {
 
 .tab-content.current {
   display: inherit;
+}
+
+.tab-2 {
+  height: 300px;
+  font-size: 15pt;
+  text-align: center;
+}
+
+.tab-2 div {
+  margin-top: 80px;
+}
+
+.tab-3 {
+  height: 300px;
+  font-size: 15pt;
+  text-align: center;
+}
+
+.tab-3 div {
+  margin-top: 80px;
 }
 /*検索結果 - tab menu終わり*/
 
@@ -138,7 +191,7 @@ ul.tabs li.current {
 }
 
 .shop-title {
-  font-size: 23pt;
+  font-size: 20pt;
   font-weight: 600;
 }
 

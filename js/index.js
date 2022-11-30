@@ -1,16 +1,20 @@
-$(function () {
+/*Index Page */
+
+//headerとfooter
+$(window).on("load", function () {
   $("header").load("header.html");
   $("footer").load("footer.html");
+});
 
+$(function () {
   slider();
   getUserLocation();
   search_restaurant();
   doAjax(
-    "http://webservice.recruit.co.jp/hotpepper/gourmet/v1/?key=3aed834ab74d67bd&lat=35.6773686&lng=139.7694908&format=jsonp" +
-      "&callback=successCall&count=5",
-    1,
+    "http://webservice.recruit.co.jp/hotpepper/gourmet/v1/?key=3aed834ab74d67bd&lat=35.680930&lng=139.766863&format=jsonp" +
+      "&callback=successCall&count=5&range=1",
     1
-  ); // url, range, startNum
+  ); // url, startNum
 });
 
 // bxslider

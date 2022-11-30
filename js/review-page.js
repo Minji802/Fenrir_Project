@@ -1,6 +1,6 @@
 /* レビュー投稿 */
 function showReviewPage() {
-  window.open("review-page.html", "팝업", "width=500,height=500");
+  window.open("review-page.html", "popup", "width=500,height=500");
 }
 
 function reviewUpdate() {

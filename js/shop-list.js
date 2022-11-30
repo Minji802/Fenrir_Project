@@ -4,6 +4,7 @@
 
 let dataSet = [];
 let changeVal = false; // indexとlist-pageを分ける
+let rangeM = [0, 300, 500, 1000, 2000, 3000]; // range 0, 1, 2, 3, 4, 5
 
 function search_restaurant() {
   // when the button clicked
@@ -13,26 +14,33 @@ function search_restaurant() {
     let longitude = $("#longitude").text(); //軽度
     let startNum = 1;
 
-    console.log(range);
-    console.log(latitude);
-    console.log(longitude);
+    // 詳細条件
+    let card = $('input:checkbox[id="card_check"]').is(":checked") ? 1 : 0; // カード決済
+    let child = $('input:checkbox[id="child_check"]').is(":checked") ? 1 : 0; // 子供連れ
+    let pet = $('input:checkbox[id="pet_check"]').is(":checked") ? 1 : 0; // ペット連れ
+    let parking = $('input:checkbox[id="parking_check"]').is(":checked")
+      ? 1
+      : 0; // 駐車空間
 
-    // let url =
-    //   "http://webservice.recruit.co.jp/hotpepper/gourmet/v1/?key=3aed834ab74d67bd&lat=35.680930&lng=139.766863&format=jsonp&callback=successCall&count=100&";
+    // console.log(range);
+    // console.log(latitude);
+    // console.log(longitude);
+    // console.log(card);
+    // console.log(child);
+    // console.log(pet);
 
-    // doAjax(url, range, startNum);
+    window.close();
 
-    let openUrl = `list-page.html?range=${range}`;
+    let openUrl = `list-page.html?range=${range}&card=${card}&child=${child}&pet=${pet}&parking=${parking}`;
     window.open(openUrl);
   });
 }
 
-function doAjax(url, range, startNum) {
+function doAjax(url, startNum) {
   $.ajax({
     url: url,
     async: false, //同期通信
     data: {
-      range: range,
       start: startNum,
     },
     dataType: "jsonp",
@@ -49,19 +57,39 @@ function successCall(data) {
 
   if (changeVal) {
     /* list-page.htmlで見せる*/
-    console.log(changeVal);
-    let url =
-      "http://webservice.recruit.co.jp/hotpepper/gourmet/v1/?key=3aed834ab74d67bd&lat=35.6773686&lng=139.7694908&format=jsonp" +
-      "&callback=successCall&count=100";
+    // console.log(changeVal);
+    let urlParams = new URLSearchParams(window.location.search);
+    let card = urlParams.get("card");
+    let child = urlParams.get("child");
+    let pet = urlParams.get("pet");
+    let parking = urlParams.get("parking");
     let range = $("#range").val();
+
     let startNum = parseInt($("#startNum").text()) + 100; // 1 ~ 100, 101 ~ 200, 201 ~ 300, .... 100以上　全ての情報を呼び出す
+    let url =
+      "http://webservice.recruit.co.jp/hotpepper/gourmet/v1/?key=3aed834ab74d67bd&lat=35.680930&lng=139.766863&format=jsonp" +
+      "&callback=successCall&count=100" +
+      "&card=" +
+      card +
+      "&child=" +
+      child +
+      "&pet=" +
+      pet +
+      "&parking=" +
+      parking +
+      "&range=" +
+      range;
+
     $("#startNum").text(startNum);
-    console.log(url);
+
+    // console.log(url);
 
     // データパースの進行度を表す
     if (parseInt((startNum / cnt) * 100) < 100) {
       $("#loading").text("Loading..." + parseInt((startNum / cnt) * 100) + "%");
-      $("#total").text("周りに" + cnt + "個のレストランを見つかりました。");
+      $("#total").text(
+        rangeM[range] + "m 周りに" + cnt + "個のレストランを見つかりました。"
+      );
     }
 
     // startNumがデータの総個数(results_available)を超えないように
@@ -70,7 +98,9 @@ function successCall(data) {
     } else {
       pagination(dataSet);
       $("#loading").text("Loading...100%");
-      $("#total").text("周りに" + cnt + "個のレストランを見つかりました。");
+      $("#total").text(
+        rangeM[range] + "m 周りに" + cnt + "個のレストランを見つかりました。"
+      );
       return;
     }
   } else {
@@ -94,8 +124,8 @@ function successCall(data) {
 
 /* list-page.html & ページング処理*/
 function pagination(data) {
-  console.log("----------------");
-  console.log(data);
+  // console.log("----------------");
+  // console.log(data);
   let list = $("#pagination");
   list.pagination({
     dataSource: data,
@@ -106,9 +136,9 @@ function pagination(data) {
         <div class="container">
           <!-- tab menu 上段始まり -->
           <ul class="tabs">
-          <li class="tab-link current" data-tab="tab-1" onclick="tabMenu()">近い順</li>
-          <li class="tab-link" data-tab="tab-2" onclick="tabMenu()">評価順</li>
-          <li class="tab-link" data-tab="tab-3" onclick="tabMenu()">投稿順</li>
+          <li class="tab-link current" data-tab="tab-1" onclick="tabMenu()"><strong>近い順</strong></li>
+          <li class="tab-link" data-tab="tab-2" onclick="tabMenu()"><strong>評価順</strong></li>
+          <li class="tab-link" data-tab="tab-3" onclick="tabMenu()"><strong>投稿順</strong></li>
           </ul>
           <!-- tab menu 上段終わり -->`;
 
@@ -119,7 +149,7 @@ function pagination(data) {
           <!-- tab menu 内容始まり -->
           <div class="tab-content current tab-1">
           <div class="bookmark"><button id="bookmark-btn" class="bookmark-btn-class" onclick="favoriteShop(this);">★</button></div>
-            <div class="shop-list" onclick='shopDetail(${shopObj});'>
+            <div class='shop-list' onclick='shopDetail(${shopObj});'>
               <div class="shop-img"><img src="${s.photo.pc.l}"></div>
               <div class="textBox">
                 <div class="shop-title">${s.name}</div>

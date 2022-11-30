@@ -1,18 +1,41 @@
-$(function () {
+/*List Page */
+
+/* headerとfooter */
+$(window).on("load", function () {
   $("header").load("header.html");
   $("footer").load("footer.html");
+});
 
+$(function () {
   changeVal = true;
-  getUserLocation();
   setTimeout(function () {
-    const urlParams = new URLSearchParams(window.location.search);
+    getUserLocation();
+
+    let urlParams = new URLSearchParams(window.location.search);
     let range = urlParams.get("range");
+    let card = urlParams.get("card");
+    let child = urlParams.get("child");
+    let pet = urlParams.get("pet");
+    let parking = urlParams.get("parking");
     $("#range").val(range);
+
+    $("#range2").val(range).prop("selected", true);
     let url =
-      "http://webservice.recruit.co.jp/hotpepper/gourmet/v1/?key=3aed834ab74d67bd&lat=35.6773686&lng=139.7694908&format=jsonp" +
-      "&callback=successCall&count=100&";
-    doAjax(url, range, 1);
+      "http://webservice.recruit.co.jp/hotpepper/gourmet/v1/?key=3aed834ab74d67bd&lat=35.680930&lng=139.766863&format=jsonp" +
+      "&callback=successCall&count=100&card=" +
+      card +
+      "&child=" +
+      child +
+      "&pet=" +
+      pet +
+      "&parking=" +
+      parking +
+      "&range=" +
+      range;
+    doAjax(url, 1);
   }, 100);
+
+  search_restaurant();
 });
 
 // tab menu
@@ -31,9 +54,12 @@ function tabMenu() {
 
 // shop bookmark　機能
 function favoriteShop(obj) {
-  var bookmarkBtn = document.getElementById("bookmark-btn");
-  bookmarkBtn.style.color = "#ff5c5d";
+  $(obj).css("color", "#ff5c5d");
+
   alert("ブックマーク機能は準備中です。少々お待ちください。");
-  // var bookmarkBtn = document.getElementsByClassName("selected");
-  // $(obj).addClass("selected");
+}
+
+// filter search　機能
+function filterSearch() {
+  $(".search-button").trigger("click");
 }

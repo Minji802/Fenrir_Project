@@ -1,9 +1,12 @@
-/*shop detail page*/
+/*Shop Detail Page*/
 function shopDetail(shopObj) {
-  console.log(shopObj);
+  // console.log(shopObj);
+  $("#loading").hide();
+  $("#total").hide();
   $("#search-list").hide();
   $("#pagination").hide();
   $(".add-detailed-search").hide();
+  $(".searchBackground").hide();
 
   let dataHtml = `<!--shop detail-->
     <div id="detail-page">
@@ -48,6 +51,10 @@ function shopDetail(shopObj) {
       <tr class="detail-shop-pet">
         <td class="detail-shop-table-title"><strong>ペット連れ</strong></td>
         <td>${shopObj.pet}</td>
+      </tr>
+      <tr class="detail-shop-parking">
+        <td class="detail-shop-table-title"><strong>駐車場</strong></td>
+        <td>${shopObj.parking}</td>
       </tr>
     </table>
     <div class="star-point">
