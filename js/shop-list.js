@@ -117,11 +117,11 @@ function pagination(data) {
           let shopObj = JSON.stringify(s);
           dataHtml += `
           <!-- tab menu 内容始まり -->
-          <div class="tab-content current tab-1" onclick='shopDetail(${shopObj});'>
-            <div class="shop-list">
+          <div class="tab-content current tab-1">
+          <div class="bookmark"><button id="bookmark-btn" class="bookmark-btn-class" onclick="favoriteShop(this);">★</button></div>
+            <div class="shop-list" onclick='shopDetail(${shopObj});'>
               <div class="shop-img"><img src="${s.photo.pc.l}"></div>
               <div class="textBox">
-                <div class="bookmark">お気に入り</div>
                 <div class="shop-title">${s.name}</div>
                 <div class="shop-info">
                   <div class="shop-access">${s.access}</div>
@@ -129,11 +129,22 @@ function pagination(data) {
                   <div class="shop-intro">
                     ~${s.catch}~
                   </div>
-                  <div class="shop-adress">住所：${s.address}</div>
-                  <div class="shop-budget">予算：${s.budget.name}</div>
-                  <div class="shop-card">カード決済：${s.card}</div>
+                  <table class="list-shop-table">
+                    <tr class="shop-adress">
+                      <td class="list-shop-table-title"><strong>住所</strong></td>
+                      <td>${s.address}</td>
+                    </tr>
+                    <tr class="shop-budget">
+                      <td class="list-shop-table-title"><strong>予算</strong></td>
+                      <td>${s.budget.name}</td>
+                    </tr>
+                    <tr class="shop-card">
+                      <td class="list-shop-table-title"><strong>カード決済</strong></td>
+                      <td>${s.card}</td>
+                    </tr>
+                  </table>
                   <div class="shop-starPoint">★★★★☆ ( ? / 5.0)</div>
-                  <div class="shop-reviewCount">review count</div>
+                  <div class="shop-reviewCount">レビュー   <strong>0</strong>件</div>
                 </div>
               </div>
             </div>

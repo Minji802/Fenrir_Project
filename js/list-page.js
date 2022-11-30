@@ -23,7 +23,17 @@ function tabMenu() {
     $("ul.tabs li").removeClass("current");
     $(".tab-content").removeClass("current");
 
+    $(this).removeClass("bookmark");
     $(this).addClass("current");
     $("." + tab_id).addClass("current");
   });
+}
+
+// shop bookmark　機能
+function favoriteShop(obj) {
+  var bookmarkBtn = document.getElementById("bookmark-btn");
+  bookmarkBtn.style.color = "#ff5c5d";
+  alert("ブックマーク機能は準備中です。少々お待ちください。");
+  // var bookmarkBtn = document.getElementsByClassName("selected");
+  // $(obj).addClass("selected");
 }

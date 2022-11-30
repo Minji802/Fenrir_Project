@@ -8,40 +8,53 @@ function shopDetail(shopObj) {
   let dataHtml = `<!--shop detail-->
     <div id="detail-page">
       <div id="detail-shop">
+      <button  class="detail-close-btn" onclick="location.reload()"> x </button>
       <div class="detail-shop-img"><img src="${shopObj.photo.pc.l}"></div>
       <div class="detail-title">
         <div class="detail-shop-name">${shopObj.name}</div>
         <div class="detail-shop-access">${shopObj.access}</div>
       </div>
       <div class="detail-info">
-        <div class="detail-shop-catch">~${shopObj.catch}~</div>
-        <div class="detail-shop-adress"><strong>住所 : </strong>${shopObj.address}</div>
-        
-        <div class="detail-shop-open"><strong>営業時間：</strong>${shopObj.open}</div>
-        <div class="detail-shop-close"><strong>休日：</strong>${shopObj.close}</div>
-        
-        <div class="detail-shop-tel"><strong>Tel</strong> 00-000-0000</div>
-        <div class="detail-shop-card"><strong>カード決済：</strong>${shopObj.card}</div>
-        <div class="detail-shop-budget"><strong>予算：</strong>${shopObj.budget.name}</div>
-        
-        <div class="detail-shop-child"><strong>子供連れ：</strong>${shopObj.child}</div>
-        <div class="detail-shop-pet"><strong>ペット連れ：</strong>${shopObj.pet}</div>
-        
-        <div class="star-point">
-          <span class="star">
-            ★★★★★
-            <span>★★★★★</span>
-            <input
-              type="range"
-              oninput="drawStar(this)"
-              value="1"
-              step="1"
-              min="0"
-              max="10"
-            />
-          </span>
+        <div class="detail-shop-catch"><strong>~ ${shopObj.catch} ~</strong></div>
+      <table class="detail-shop-table">
+      <tr class="detail-shop-adress">
+        <td class="detail-shop-table-title"><strong>住所</strong></td>
+        <td>${shopObj.address}</td>
+      </tr>
+      <tr class="detail-shop-open">
+        <td class="detail-shop-table-title"><strong>営業時間</strong></td>
+        <td>${shopObj.open}</td>
+      </tr>
+      <tr class="detail-shop-close">
+        <td class="detail-shop-table-title"><strong>休日</strong></td>
+        <td>${shopObj.close}</td>
+      </tr>
+      <tr class="detail-shop-tel">
+        <td class="detail-shop-table-title"><strong>Tel</strong></td>
+        <td>00-000-0000</td>
+      </tr>
+      <tr class="detail-shop-card">
+        <td class="detail-shop-table-title"><strong>カード決済</strong></td>
+        <td>${shopObj.card}</td>
+      </tr>
+      <tr class="detail-shop-budget">
+        <td class="detail-shop-table-title"><strong>予算</strong></td>
+        <td>${shopObj.budget.name}</td>
+      </tr>
+      <tr class="detail-shop-child">
+        <td class="detail-shop-table-title"><strong>子供連れ</strong></td>
+        <td>${shopObj.child}</td>
+      </tr>
+      <tr class="detail-shop-pet">
+        <td class="detail-shop-table-title"><strong>ペット連れ</strong></td>
+        <td>${shopObj.pet}</td>
+      </tr>
+    </table>
+    <div class="star-point">
+    <span class="star">
+      ★★★★★</span>
           <div class="star-point-average">( ? / 5.0)</div>
-          <button onclick='showReviewPage();'>등록</button>
+          <button onclick='showReviewPage();'>投稿</button>
         </div>
         </div>
       </div>

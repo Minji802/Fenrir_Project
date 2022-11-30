@@ -4,6 +4,6 @@ function showReviewPage() {
 }
 
 function reviewUpdate() {
-  alert("準備中です。少々お待ちください。");
+  alert("レビュー投稿機能は準備中です。少々お待ちください。");
   window.close("reviewPage.html");
 }

@@ -20,6 +20,7 @@
   font-size: 13pt;
   font-weight: 600;
   margin-top: 3px;
+  cursor: pointer;
 }
 
 .search-list-shop {
@@ -115,6 +116,17 @@ ul.tabs li.current {
   margin-right: 20px;
 }
 
+.bookmark button {
+  height: 57px;
+  width: 41px;
+  font-size: 25pt;
+  background-color: #fff9c0;
+  border: 4px solid #ff5c5d;
+  color: rgb(180, 180, 180);
+  cursor: pointer;
+  z-index: 10000;
+}
+
 .shop-img {
   width: 20%;
   margin-left: 20px;
@@ -142,11 +154,25 @@ ul.tabs li.current {
   margin-top: 5pt;
 }
 
+.list-shop-table-title {
+  width: 105px;
+  height: 30px;
+}
+
+.shop-starPoint {
+  display: inline-block;
+}
+
+.shop-reviewCount {
+  display: inline-block;
+  margin-left: 20px;
+}
+
 /*paging*/
 #pagination {
   margin-top: 20px;
   position: relative;
   display: flex;
   justify-content: center;
-  margin-left: 300px;
+  margin-left: 200px;
 }
