@@ -90,7 +90,7 @@ function successCall(data) {
     if (parseInt((startNum / cnt) * 100) < 100) {
       $("#loading").text("Loading..." + parseInt((startNum / cnt) * 100) + "%");
       $("#total").text(
-        rangeM[range] + "m 周りに" + cnt + "個のレストランを見つかりました。"
+        rangeM[range] + "m 以内に" + cnt + "個の飲食店が見つかりました。"
       );
     }
 
@@ -101,7 +101,7 @@ function successCall(data) {
       pagination(dataSet);
       $("#loading").text("Loading...100%");
       $("#total").text(
-        rangeM[range] + "m 周りに" + cnt + "個のレストランを見つかりました。"
+        rangeM[range] + "m 以内に" + cnt + "個の飲食店が見つかりました。"
       );
       return;
     }
