@@ -51,10 +51,11 @@ function doAjax(url, startNum) {
 function successCall(data) {
   //console.log(data);
   let shops = data.results.shop;
+  //console.log("shops: ", shops);
   let cnt = data.results.results_available;
-  console.log(cnt);
+  //console.log(cnt);
   dataSet.push.apply(dataSet, shops);
-  console.log(dataSet);
+  //console.log(dataSet);
 
   if (changeVal) {
     /* list-page.htmlで見せる*/
@@ -95,7 +96,7 @@ function successCall(data) {
 
     // startNumがデータの総個数(results_available)を超えないように
     if (parseInt(startNum / 100) != parseInt(cnt / 100) + 1) {
-      doAjax(url, range, startNum);
+      doAjax(url, startNum);
     } else {
       pagination(dataSet);
       $("#loading").text("Loading...100%");
@@ -126,7 +127,7 @@ function successCall(data) {
 /* list-page.html & ページング処理*/
 function pagination(data) {
   // console.log("----------------");
-  // console.log(data);
+  //console.log("data:", data);
   let list = $("#pagination");
   list.pagination({
     dataSource: data,
