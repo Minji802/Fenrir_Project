@@ -52,8 +52,9 @@ function successCall(data) {
   //console.log(data);
   let shops = data.results.shop;
   let cnt = data.results.results_available;
-
+  console.log(cnt);
   dataSet.push.apply(dataSet, shops);
+  console.log(dataSet);
 
   if (changeVal) {
     /* list-page.htmlで見せる*/

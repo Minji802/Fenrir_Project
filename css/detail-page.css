@@ -2,7 +2,6 @@
   margin-left: 120px;
   margin-right: 120px;
   margin-top: 50px;
-  position: relative;
 }
 
 /*shop-detail*/
@@ -114,13 +113,30 @@
 
 .detail-menu-list {
   border: solid 1px gray;
-  width: 100%;
+  width: 45%;
   height: 300px;
   display: flex;
 }
 
 .detail-menu-list div {
   margin: auto;
+}
+
+/*map*/
+.shop-map {
+  width: 45%;
+  float: right;
+  margin-top: -335px;
+  margin-right: 20px;
+}
+
+.shop-map-title {
+  font-size: 18pt;
+  font-weight: 550;
+}
+
+#map {
+  height: 300px;
 }
 
 /*review*/

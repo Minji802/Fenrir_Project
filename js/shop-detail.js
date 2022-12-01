@@ -1,4 +1,7 @@
 /*Shop Detail Page*/
+let shopLatitude;
+let shopLogitude;
+
 function shopDetail(shopObj) {
   // console.log(shopObj);
   $("#loading").hide();
@@ -8,7 +11,11 @@ function shopDetail(shopObj) {
   $(".add-detailed-search").hide();
   $(".searchBackground").hide();
 
-  let dataHtml = `<!--shop detail-->
+  let dataHtml = ` <script
+  src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDb4vTBtJ5eI4DOAJXj4ov7YSdM066-PQ0&callback=initMap&v=weekly"
+  defer
+></script>
+  <!--shop detail-->
     <div id="detail-page">
       <div id="detail-shop">
       <button  class="detail-close-btn" onclick="location.reload()"> x </button>
@@ -72,13 +79,37 @@ function shopDetail(shopObj) {
         <div class="detail-menu-title">menu</div>
         <div class="detail-menu-list"><div>準備中です。少々お待ちください。</div></div>
       </div>
-  
+
+      <!--map-->
+      <div class="shop-map">
+        <div class="shop-map-title">位置</div>
+        <div id="map"></div>
+      </div>
+
       <!--review-->
       <div id="detail-review">
         <div class="detail-review-title">review</div>
         <div class="detail-review-list"><div>準備中です。少々お待ちください。</div></div>
       </div>
     </div>`;
-
+  shopLatitude = shopObj.lat;
+  shopLogitude = shopObj.lng;
   $("#detail-shop").append(dataHtml);
+
+  window.initMap = initMap;
+}
+
+function initMap() {
+  console.log(shopLatitude);
+  console.log(shopLogitude);
+  const myLatLng = { lat: shopLatitude, lng: shopLogitude };
+  const map = new google.maps.Map(document.getElementById("map"), {
+    zoom: 15,
+    center: myLatLng,
+  });
+  new google.maps.Marker({
+    position: myLatLng,
+    map,
+    title: "Hello World!",
+  });
 }
