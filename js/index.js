@@ -12,7 +12,7 @@ $(function () {
 });
 
 function setMainShops(latlng) {
-  console.log(latlng);
+  // console.log(latlng);
   let url =
     "http://webservice.recruit.co.jp/hotpepper/gourmet/v1/?key=3aed834ab74d67bd&lat=" +
     latlng.lat +
