@@ -5,13 +5,24 @@
 let dataSet = [];
 let changeVal = false; // indexとlist-pageを分ける
 let rangeM = [0, 300, 500, 1000, 2000, 3000]; // range 0, 1, 2, 3, 4, 5
-
+var isFirstPage = false;
 function search_restaurant() {
   // when the button clicked
   $(".search-button").click(function () {
     let range = $("#range2 option:selected").val(); //選択されたoptionのvalueを読み込む
-    let latitude = $("#latitude").text(); //緯度
-    let longitude = $("#longitude").text(); //軽度
+    //let latitude = $("#latitude").text(); //緯度
+    // let longitude = $("#longitude").text(); //軽度
+    let lat;
+    let lng;
+    if (latlng == undefined) {
+      let urlParams = new URLSearchParams(window.location.search);
+      lat = urlParams.get("lat");
+      lng = urlParams.get("lng");
+    } else {
+      lat = latlng.lat;
+      lng = latlng.lng;
+    }
+
     let startNum = 1;
 
     // 詳細条件
@@ -28,10 +39,9 @@ function search_restaurant() {
     // console.log(card);
     // console.log(child);
     // console.log(pet);
-
     window.close();
 
-    let openUrl = `list-page.html?range=${range}&card=${card}&child=${child}&pet=${pet}&parking=${parking}`;
+    let openUrl = `list-page.html?lat=${lat}&lng=${lng}&range=${range}&card=${card}&child=${child}&pet=${pet}&parking=${parking}`;
     window.open(openUrl);
   });
 }
@@ -49,7 +59,7 @@ function doAjax(url, startNum) {
 
 // result of getting restaurant
 function successCall(data) {
-  //console.log(data);
+  // console.log(data);
   let shops = data.results.shop;
   //console.log("shops: ", shops);
   let cnt = data.results.results_available;
@@ -61,6 +71,8 @@ function successCall(data) {
     /* list-page.htmlで見せる*/
     // console.log(changeVal);
     let urlParams = new URLSearchParams(window.location.search);
+    let lat = urlParams.get("lat");
+    let lng = urlParams.get("lng");
     let card = urlParams.get("card");
     let child = urlParams.get("child");
     let pet = urlParams.get("pet");
@@ -69,7 +81,11 @@ function successCall(data) {
 
     let startNum = parseInt($("#startNum").text()) + 100; // 1 ~ 100, 101 ~ 200, 201 ~ 300, .... 100以上　全ての情報を呼び出す
     let url =
-      "http://webservice.recruit.co.jp/hotpepper/gourmet/v1/?key=3aed834ab74d67bd&lat=35.680930&lng=139.766863&format=jsonp" +
+      "http://webservice.recruit.co.jp/hotpepper/gourmet/v1/?key=3aed834ab74d67bd&lat=" +
+      lat +
+      "&lng=" +
+      lng +
+      "&format=jsonp" +
       "&callback=successCall&count=100" +
       "&card=" +
       card +
@@ -81,6 +97,7 @@ function successCall(data) {
       parking +
       "&range=" +
       range;
+    //console.log(url);
 
     $("#startNum").text(startNum);
 
@@ -108,7 +125,7 @@ function successCall(data) {
   } else {
     /*index.htmlの一番近い五つのレストラン紹介の部分*/
     let content = "";
-    if (shops.length != 0) {
+    if (shops != undefined) {
       $.each(shops, function (i, s) {
         let shopObj = JSON.stringify(s);
         content = `<div class="shop-info" onclick='shopDetail(${shopObj});'>

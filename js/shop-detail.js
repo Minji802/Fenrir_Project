@@ -100,8 +100,8 @@ function shopDetail(shopObj) {
 }
 
 function initMap() {
-  console.log(shopLatitude);
-  console.log(shopLogitude);
+  //console.log(shopLatitude);
+  //console.log(shopLogitude);
   const myLatLng = { lat: shopLatitude, lng: shopLogitude };
   const map = new google.maps.Map(document.getElementById("map"), {
     zoom: 15,

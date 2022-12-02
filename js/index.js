@@ -1,21 +1,27 @@
 /*Index Page */
-
+var isFirstPage = true;
 //headerとfooter
 $(window).on("load", function () {
   $("header").load("header.html");
   $("footer").load("footer.html");
 });
-
 $(function () {
-  slider();
   getUserLocation();
+  slider();
   search_restaurant();
-  doAjax(
-    "http://webservice.recruit.co.jp/hotpepper/gourmet/v1/?key=3aed834ab74d67bd&lat=35.680930&lng=139.766863&format=jsonp" +
-      "&callback=successCall&count=5&range=1",
-    1
-  ); // url, startNum
 });
+
+function setMainShops(latlng) {
+  console.log(latlng);
+  let url =
+    "http://webservice.recruit.co.jp/hotpepper/gourmet/v1/?key=3aed834ab74d67bd&lat=" +
+    latlng.lat +
+    "&lng=" +
+    latlng.lng +
+    "&format=jsonp&callback=successCall&count=5&range=1";
+  // console.log("main = " + url);
+  doAjax(url, 1); // url, startNum
+}
 
 // bxslider
 function slider() {

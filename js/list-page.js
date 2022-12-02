@@ -9,9 +9,11 @@ $(window).on("load", function () {
 $(function () {
   changeVal = true;
   setTimeout(function () {
-    getUserLocation();
+    //getUserLocation();
 
     let urlParams = new URLSearchParams(window.location.search);
+    let lat = urlParams.get("lat");
+    let lng = urlParams.get("lng");
     let range = urlParams.get("range");
     let card = urlParams.get("card");
     let child = urlParams.get("child");
@@ -21,7 +23,11 @@ $(function () {
 
     $("#range2").val(range).prop("selected", true);
     let url =
-      "http://webservice.recruit.co.jp/hotpepper/gourmet/v1/?key=3aed834ab74d67bd&lat=35.680930&lng=139.766863&format=jsonp" +
+      "http://webservice.recruit.co.jp/hotpepper/gourmet/v1/?key=3aed834ab74d67bd&lat=" +
+      lat +
+      "&lng=" +
+      lng +
+      "&format=jsonp" +
       "&callback=successCall&count=100&card=" +
       card +
       "&child=" +
