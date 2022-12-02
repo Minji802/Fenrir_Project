@@ -1,3 +1,4 @@
+詳細については、pdfファイルをご参照ください。<br>
 [タベイコPDF ファイル ダウンロード](https://github.com/Minji802/Fenrir_Project/files/10139007/_.pdf)<br>
 
 # タベイコ
