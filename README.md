@@ -1,3 +1,5 @@
+<strong>Visit Website : [タベイコ](https://minji802.github.io/Fenrir_Project/)</strong>
+
 詳細については、pdfファイルをご参照ください。<br>
 [タベイコPDF ファイル ダウンロード](https://github.com/Minji802/Fenrir_Project/files/10139007/_.pdf)<br>
 
@@ -10,7 +12,8 @@ Project nickname : タベイコ <br>
 Project execution period : 2022.11.19 ~ 2022.12.02 <br><br>
 制作者 : 朴旼智（パク・ミンジ）<br>
 Mail : mjpark.0311kr@gmail.com <br>
-Git URL : [タベイコ](https://github.com/Minji802/Fenrir_Project) <br><br>
+GitHub URL : [タベイコ GitHub](https://github.com/Minji802/Fenrir_Project) <br><br>
+
 
 ## Development Environment
  - Tools <img src="https://img.shields.io/badge/Eclipse IDE-2C2255?style=flat-square&logo=Eclipse IDE&logoColor=white"/> <img src="https://img.shields.io/badge/Visual Studio Code-007ACC?style=flat-square&logo=Visual Studio Code&logoColor=white"/> <img src="https://img.shields.io/badge/GitHub-181717?style=flat-square&logo=GitHub&logoColor=white"/> <img src="https://img.shields.io/badge/Sourcetree-0052CC?style=flat-square&logo=Sourcetree&logoColor=white"/>
