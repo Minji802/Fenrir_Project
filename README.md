@@ -1,4 +1,5 @@
 # タベイコ
+<img src="https://user-images.githubusercontent.com/107027223/205208075-20dd909f-5d19-4d51-8e1b-bc03e2361590.png">
 #### ユーザーの現在地からどのような飲食店があるのか、情報を提供してあげるサイト<br>
 
 Project nickname : タベイコ <br>
