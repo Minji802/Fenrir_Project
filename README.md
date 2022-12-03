@@ -22,6 +22,7 @@ GitHub URL : [タベイコ GitHub](https://github.com/Minji802/Fenrir_Project) <
 
 ## Category
 <img src="https://user-images.githubusercontent.com/107027223/205239534-91567982-eb70-4da1-8746-1e308f088205.png">
+<img src="https://user-images.githubusercontent.com/107027223/205449501-10ee6859-cce9-4984-b685-7e105eb2996f.png">
 
 ***
 
