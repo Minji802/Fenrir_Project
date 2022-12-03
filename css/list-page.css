@@ -26,6 +26,7 @@
 .search-list-shop {
   margin: 10px auto;
   display: flex;
+  flex-wrap: wrap;
 }
 
 /*詳細条件*/
@@ -64,9 +65,7 @@
 /*検索結果*/
 #search-list {
   display: flex;
-  position: relative;
   justify-content: center;
-  margin-left: -50px;
   flex: 1;
 }
 
@@ -161,6 +160,7 @@ ul.tabs li.current {
   width: 80%;
   margin-left: 20px;
   margin-right: 20px;
+  text-align: left;
 }
 
 .bookmark {
@@ -207,9 +207,12 @@ ul.tabs li.current {
   margin-top: 5pt;
 }
 
+.list-shop-table {
+  width: 100%;
+}
+
 .list-shop-table-title {
-  width: 105px;
-  height: 30px;
+  width: 20%;
 }
 
 .shop-starPoint {
@@ -227,5 +230,4 @@ ul.tabs li.current {
   position: relative;
   display: flex;
   justify-content: center;
-  margin-left: 200px;
 }

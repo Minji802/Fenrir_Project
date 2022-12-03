@@ -74,16 +74,18 @@ function shopDetail(shopObj) {
       </div>
       <hr />
   
-      <!--menu-->
-      <div id="detail-menu">
-        <div class="detail-menu-title">menu</div>
-        <div class="detail-menu-list"><div>準備中です。少々お待ちください。</div></div>
-      </div>
+      <div class="menu-and-map">
+        <!--menu-->
+        <div id="detail-menu">
+          <div class="detail-menu-title">menu</div>
+          <div class="detail-menu-list"><div>準備中です。少々お待ちください。</div></div>
+        </div>
 
-      <!--map-->
-      <div class="shop-map">
-        <div class="shop-map-title">位置</div>
-        <div id="map"></div>
+        <!--map-->
+        <div class="shop-map">
+          <div class="shop-map-title">位置</div>
+          <div id="map"></div>
+        </div>
       </div>
 
       <!--review-->
@@ -99,9 +101,8 @@ function shopDetail(shopObj) {
   window.initMap = initMap;
 }
 
+/*地図に店の位置表示 */
 function initMap() {
-  //console.log(shopLatitude);
-  //console.log(shopLogitude);
   const myLatLng = { lat: shopLatitude, lng: shopLogitude };
   const map = new google.maps.Map(document.getElementById("map"), {
     zoom: 15,

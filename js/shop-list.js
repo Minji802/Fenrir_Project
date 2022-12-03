@@ -1,3 +1,5 @@
+/*店舗一覧 */
+
 // 東京駅
 // lat=35.680930
 // lng=139.766863
@@ -10,10 +12,8 @@ function search_restaurant() {
   // when the button clicked
   $(".search-button").click(function () {
     let range = $("#range2 option:selected").val(); //選択されたoptionのvalueを読み込む
-    //let latitude = $("#latitude").text(); //緯度
-    // let longitude = $("#longitude").text(); //軽度
-    let lat;
-    let lng;
+    let lat; // latitude
+    let lng; // longitude
     if (latlng == undefined) {
       let urlParams = new URLSearchParams(window.location.search);
       lat = urlParams.get("lat");
@@ -33,12 +33,6 @@ function search_restaurant() {
       ? 1
       : 0; // 駐車空間
 
-    // console.log(range);
-    // console.log(latitude);
-    // console.log(longitude);
-    // console.log(card);
-    // console.log(child);
-    // console.log(pet);
     window.close();
 
     let openUrl = `list-page.html?lat=${lat}&lng=${lng}&range=${range}&card=${card}&child=${child}&pet=${pet}&parking=${parking}`;
@@ -59,17 +53,12 @@ function doAjax(url, startNum) {
 
 // result of getting restaurant
 function successCall(data) {
-  // console.log(data);
   let shops = data.results.shop;
-  //console.log("shops: ", shops);
   let cnt = data.results.results_available;
-  //console.log(cnt);
   dataSet.push.apply(dataSet, shops);
-  //console.log(dataSet);
 
   if (changeVal) {
     /* list-page.htmlで見せる*/
-    // console.log(changeVal);
     let urlParams = new URLSearchParams(window.location.search);
     let lat = urlParams.get("lat");
     let lng = urlParams.get("lng");
@@ -97,11 +86,8 @@ function successCall(data) {
       parking +
       "&range=" +
       range;
-    //console.log(url);
 
     $("#startNum").text(startNum);
-
-    // console.log(url);
 
     // データパースの進行度を表す
     if (parseInt((startNum / cnt) * 100) < 100) {
@@ -143,8 +129,6 @@ function successCall(data) {
 
 /* list-page.html & ページング処理*/
 function pagination(data) {
-  // console.log("----------------");
-  //console.log("data:", data);
   let list = $("#pagination");
   list.pagination({
     dataSource: data,
@@ -162,7 +146,6 @@ function pagination(data) {
           <!-- tab menu 上段終わり -->`;
 
         $.each(data, function (i, s) {
-          //console.log(s);
           let shopObj = JSON.stringify(s);
           dataHtml += `
           <!-- tab menu 内容始まり -->
@@ -212,13 +195,3 @@ function pagination(data) {
     },
   });
 }
-/*Pagination Library - Normal(https://pagination.js.org/)*/
-//   使い方
-//       $('#demo').pagination({
-//     dataSource: [1, 2, 3, 4, 5, 6, 7, ... , 195],
-//     callback: function(data, pagination) {
-//         // template method of yourself
-//         var html = template(data);
-//         dataContainer.html(html);
-//     }
-// })

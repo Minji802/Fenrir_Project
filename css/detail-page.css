@@ -1,7 +1,28 @@
-#detail-page {
-  margin-left: 120px;
-  margin-right: 120px;
-  margin-top: 50px;
+/*PC画面(解像度 1024px 以上)*/
+@media screen and (min-width: 1024px) {
+  #detail-page {
+    margin-left: 120px;
+    margin-right: 120px;
+    margin-top: 50px;
+  }
+}
+
+/* タブレットの横幅、縦幅 (解像度 768px ~ 1023px)*/
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+  #detail-page {
+    margin-top: 50px;
+  }
+}
+
+/* モバイルの横幅、縦幅 (解像度 767px以内)*/
+@media screen and (max-width: 767px) {
+  /*shop-detail*/
+  #detail-shop {
+    height: auto;
+    margin-left: 20px;
+    margin-right: 20px;
+    margin-top: 60px;
+  }
 }
 
 /*shop-detail*/
@@ -98,45 +119,93 @@
   color: #fff5f4;
   cursor: pointer;
 }
+/*Menu And Map - PC画面、タブレット画面(解像度 768px 以上)*/
+@media screen and (min-width: 768px) {
+  .menu-and-map {
+    display: flex;
+    flex-wrap: wrap;
+  }
 
-/*Menu*/
-#detail-menu {
-  margin-top: 50px;
-  margin-left: 20px;
-  margin-right: 20px;
+  /*Menu*/
+  #detail-menu {
+    margin-top: 50px;
+    margin-left: 20px;
+    margin-right: 20px;
+    flex: 1;
+  }
+
+  .detail-menu-title {
+    font-size: 18pt;
+    font-weight: 550;
+  }
+
+  .detail-menu-list {
+    border: solid 1px gray;
+    height: 300px;
+    display: flex;
+  }
+
+  .detail-menu-list div {
+    margin: auto;
+  }
+
+  /*map*/
+  .shop-map {
+    margin-top: 50px;
+    margin-left: 20px;
+    margin-right: 20px;
+    flex: 1;
+  }
+
+  .shop-map-title {
+    font-size: 18pt;
+    font-weight: 550;
+  }
+
+  #map {
+    height: 300px;
+  }
 }
 
-.detail-menu-title {
-  font-size: 18pt;
-  font-weight: 550;
-}
+/* Menu And Map - モバイルの横幅、縦幅 (解像度 767px 以内)*/
+@media screen and (max-width: 767px) {
+  /*Menu*/
+  #detail-menu {
+    margin-top: 50px;
+    margin-left: 20px;
+    margin-right: 20px;
+  }
 
-.detail-menu-list {
-  border: solid 1px gray;
-  width: 45%;
-  height: 300px;
-  display: flex;
-}
+  .detail-menu-title {
+    font-size: 18pt;
+    font-weight: 550;
+  }
 
-.detail-menu-list div {
-  margin: auto;
-}
+  .detail-menu-list {
+    border: solid 1px gray;
+    height: 300px;
+    display: flex;
+  }
 
-/*map*/
-.shop-map {
-  width: 45%;
-  float: right;
-  margin-top: -335px;
-  margin-right: 20px;
-}
+  .detail-menu-list div {
+    margin: auto;
+  }
 
-.shop-map-title {
-  font-size: 18pt;
-  font-weight: 550;
-}
+  /*map*/
+  .shop-map {
+    margin-top: 50px;
+    margin-left: 20px;
+    margin-right: 20px;
+  }
 
-#map {
-  height: 300px;
+  .shop-map-title {
+    font-size: 18pt;
+    font-weight: 550;
+  }
+
+  #map {
+    height: 300px;
+  }
 }
 
 /*review*/

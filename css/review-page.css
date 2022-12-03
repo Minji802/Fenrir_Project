@@ -1,3 +1,4 @@
+/*レビュー投稿*/
 body {
   background-color: #ff5858;
 }
@@ -46,7 +47,7 @@ body {
   pointer-events: none;
 }
 
-/*리뷰작성*/
+/*レビュー作成*/
 .write-reivew {
   width: 90%;
   height: 330px;

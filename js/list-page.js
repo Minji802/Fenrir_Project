@@ -9,8 +9,6 @@ $(window).on("load", function () {
 $(function () {
   changeVal = true;
   setTimeout(function () {
-    //getUserLocation();
-
     let urlParams = new URLSearchParams(window.location.search);
     let lat = urlParams.get("lat");
     let lng = urlParams.get("lng");

@@ -45,12 +45,12 @@ Windows 11
 ### 使用しているAPI,SDK,ライブラリなど
 - ホットペッパーグルメサーチAPI
 - Geolocation API
-- Pagination ライブラリ
-- bxSlider ライブラリ
+- Pagination.js 2.3.0
+- bxSlider 4.2.12
 - Google Map API
 
 ### テーブル定義(ER 図)などの設計ドキュメント
-添付したプレゼンテーションを確認してください。
+添付したpdfファイルを確認してください。
 
 #### コンセプト
 ユーザーの現在地にどのような飲食店があるのか、情報を提供するサイト
