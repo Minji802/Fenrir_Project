@@ -217,6 +217,7 @@ ul.tabs li.current {
 
 .shop-starPoint {
   display: inline-block;
+  color: #ff5c5d;
 }
 
 .shop-reviewCount {
