@@ -119,6 +119,7 @@
   color: #fff5f4;
   cursor: pointer;
 }
+
 /*Menu And Map - PC画面、タブレット画面(解像度 768px 以上)*/
 @media screen and (min-width: 768px) {
   .menu-and-map {
@@ -169,6 +170,11 @@
 
 /* Menu And Map - モバイルの横幅、縦幅 (解像度 767px 以内)*/
 @media screen and (max-width: 767px) {
+  .menu-and-map {
+    display: block;
+    flex-wrap: wrap;
+  }
+
   /*Menu*/
   #detail-menu {
     margin-top: 50px;

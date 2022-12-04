@@ -231,3 +231,67 @@ ul.tabs li.current {
   display: flex;
   justify-content: center;
 }
+
+/* タブレットの横幅、縦幅 (解像度 817px ~ 1023px)*/
+@media screen and (min-width: 817px) and (max-width: 1023px) {
+  /*詳細条件*/
+  .add-detailed-search {
+    width: 140px;
+    height: 226px;
+    margin-top: 25px;
+    margin-left: 10px;
+    border: 5px solid #ff5c5d;
+    background-color: #fff5f4;
+  }
+}
+
+/* searchBox- モバイルの横幅、縦幅 (解像度 767px 以内)*/
+@media screen and (max-width: 816px) {
+  /*再検索*/
+  .search-list-shop {
+    margin: 10px auto;
+  }
+
+  /*詳細条件*/
+  .add-detailed-search {
+    width: 140px;
+    height: 226px;
+    margin-top: 25px;
+    margin-left: auto;
+    margin-right: auto;
+    border: 5px solid #ff5c5d;
+    background-color: #fff5f4;
+  }
+
+  /*検索結果*/
+  ul.tabs li {
+    width: auto;
+    display: inline-block;
+    background: #ff5c5d;
+    color: white;
+    padding: 10px 15px;
+    cursor: pointer;
+    text-align: center;
+    font-size: 17pt;
+  }
+
+  .search-result-page {
+    position: relative;
+    margin-top: 25px;
+    font-size: 13pt;
+    width: 70%;
+    min-width: 360px;
+  }
+
+  .shop-list {
+    display: block;
+    margin-top: 20px;
+    height: auto;
+  }
+
+  .shop-img {
+    width: 100%;
+    margin-left: 50px;
+    margin-top: -50px;
+  }
+}
