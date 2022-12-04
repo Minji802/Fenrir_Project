@@ -109,7 +109,7 @@ function successCall(data) {
       return;
     }
   } else {
-    /*index.htmlの一番近い五つのレストラン紹介の部分*/
+    /*index.htmlの近いレストラン紹介の部分*/
     let content = "";
     if (shops != undefined) {
       $.each(shops, function (i, s) {
