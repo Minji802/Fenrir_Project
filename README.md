@@ -1,12 +1,17 @@
-<strong>Visit Website : [タベイコ](https://minji802.github.io/Fenrir_Project/)</strong>
+<strong>Visit Website : [タベイコ](https://minji802.github.io/Fenrir_Project/) https://minji802.github.io/Fenrir_Project/</strong>
 
 詳細については、pdfファイルをご参照ください。<br>
 [タベイコPDF ファイル ダウンロード](https://github.com/Minji802/Fenrir_Project/files/10146855/_.pdf)<br>
 
 # タベイコ
 <img src="https://user-images.githubusercontent.com/107027223/205208075-20dd909f-5d19-4d51-8e1b-bc03e2361590.png">
+（↑このイメージは東京駅（lat=35.680930, lng=139.766863）基準です。
+実際と違うことがあります。ご注意ください。）
+<br><br>
 
-#### ユーザーの現在地からどのような飲食店があるのか、情報を提供してあげるサイト<br>
+***
+
+#### ユーザーの現在地にどのような飲食店があるのか、情報を提供するサイト<br>
 
 Project nickname : タベイコ <br>
 Project execution period : 2022.11.19 ~ 2022.12.02 <br><br>
