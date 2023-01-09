@@ -48,10 +48,13 @@
   width: 20%;
   float: right;
   margin-top: 15px;
+  border: 10px solid #ff5858;
+  border-style: dashed solid;
 }
 
 .detail-shop-img img {
-  width: 100%;
+  width: 95%;
+  margin: 10px;
 }
 
 .detail-title {
