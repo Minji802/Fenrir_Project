@@ -25,37 +25,23 @@
   margin-bottom: 50px;
 }
 
-/* タブレットの横幅、縦幅 (解像度 768px ~ 1023px)*/
+@media screen and (min-width: 1023px) and (max-width: 1250px) {
+  .searchBox {
+    width: 40%;
+  }
+}
+
+/* タブレットの横幅、縦幅 ( 768px ~ 1023px)*/
 @media screen and (min-width: 768px) and (max-width: 1023px) {
   .searchBox {
     width: 50%;
-    height: auto;
-    position: sticky;
-    top: 0px;
-    background-color: #fff5f4;
-    display: inline-block;
-    border-radius: 10px;
-    border: solid 5px #ff5c5d;
-    z-index: 1;
-    margin-top: 35px;
-    margin-bottom: 50px;
   }
 }
 
 /* searchBox- モバイルの横幅、縦幅 (解像度 767px 以内)*/
-@media screen and (max-width: 767px) {
+@media screen and (max-width: 768px) {
   .searchBox {
-    width: 100%;
-    height: auto;
-    position: sticky;
-    top: 0px;
-    background-color: #fff5f4;
-    display: inline-block;
-    border-radius: 10px;
-    border: solid 5px #ff5c5d;
-    z-index: 1;
-    margin-top: 35px;
-    margin-bottom: 50px;
+    width: 60%;
   }
 }
 

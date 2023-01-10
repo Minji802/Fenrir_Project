@@ -1,7 +1,7 @@
 /*再検索*/
 .searchBox2 {
   width: 100vw;
-  height: 38px;
+  height: auto;
   top: 0px;
   position: sticky;
   z-index: 1;
@@ -20,6 +20,7 @@
   font-size: 13pt;
   font-weight: 600;
   margin-top: 3px;
+  margin-bottom: 3px;
   cursor: pointer;
 }
 
@@ -62,11 +63,21 @@
   text-align: center;
 }
 
-/*検索結果*/
-#search-list {
-  display: flex;
-  justify-content: center;
-  flex: 1;
+@media screen and (min-width: 461px) {
+  /*検索結果*/
+  #search-list {
+    display: flex;
+    justify-content: center;
+    flex: 1;
+  }
+}
+
+@media screen and (max-width: 460px) {
+  /*検索結果*/
+  #search-list {
+    display: flex;
+    justify-content: center;
+  }
 }
 
 #loading {
@@ -237,12 +248,13 @@ ul.tabs li.current {
 @media screen and (min-width: 817px) and (max-width: 1023px) {
   /*詳細条件*/
   .add-detailed-search {
-    width: 140px;
+    width: 120px;
     height: 226px;
     margin-top: 25px;
     margin-left: 10px;
     border: 5px solid #ff5c5d;
     background-color: #fff5f4;
+    font-size: 10pt;
   }
 }
 
@@ -273,15 +285,15 @@ ul.tabs li.current {
     padding: 10px 15px;
     cursor: pointer;
     text-align: center;
-    font-size: 17pt;
+    font-size: 12pt;
   }
 
   .search-result-page {
     position: relative;
     margin-top: 25px;
     font-size: 13pt;
-    width: 70%;
-    min-width: 360px;
+    width: 80%;
+    min-width: 200px;
   }
 
   .shop-list {
@@ -291,8 +303,20 @@ ul.tabs li.current {
   }
 
   .shop-img {
-    width: 100%;
+    width: 80%;
     margin-left: 50px;
     margin-top: -50px;
+  }
+}
+
+@media screen and (max-width: 550px) {
+  .shop-img {
+    width: 80%;
+    margin-left: 0px;
+    margin-top: -50px;
+  }
+
+  .shop-img img {
+    margin-left: 20px;
   }
 }
