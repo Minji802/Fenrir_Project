@@ -35,8 +35,8 @@ function search_restaurant() {
 
     window.close();
 
-    let openUrl = `list-page.html?lat=${lat}&lng=${lng}&range=${range}&card=${card}&child=${child}&pet=${pet}&parking=${parking}`;
-    window.open(openUrl);
+    let openUrl = `list-page?lat=${lat}&lng=${lng}&range=${range}&card=${card}&child=${child}&pet=${pet}&parking=${parking}`;
+    location.href = openUrl;
   });
 }
 

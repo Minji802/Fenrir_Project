@@ -2,8 +2,8 @@
 
 /* headerとfooter */
 $(window).on("load", function () {
-  $("header").load("header.html");
-  $("footer").load("footer.html");
+  $("header").load("/views/header.ejs");
+  $("footer").load("/views/footer.ejs");
 });
 
 $(function () {
