@@ -237,12 +237,72 @@
 }
 
 .detail-review-list {
-  border: solid 1px gray;
   width: 100%;
-  height: 300px;
-  display: flex;
+  height: auto;
+  border: solid 1px gray;
 }
 
-.detail-review-list div {
-  margin: auto;
+.review-writer {
+  width: 20%;
+  height: 40px;
+  text-align: center;
+  font-size: 14pt;
+  font-weight: 600;
+}
+
+.review-text {
+  width: 55%;
+  text-align: center;
+  font-size: 14pt;
+  font-weight: 600;
+}
+
+.review-date {
+  width: 20%;
+  font-size: 14pt;
+  font-weight: 600;
+}
+
+.review-delete {
+  width: 5%;
+}
+
+.review-writer-td {
+  height: 40px;
+  font-weight: 550;
+  text-align: center;
+  color: rgb(96, 96, 96);
+}
+
+.review-text-td {
+  text-align: center;
+  color: rgb(96, 96, 96);
+}
+
+.review-date-td {
+  font-size: 8pt;
+  font-weight: 600;
+  text-align: center;
+  color: rgb(96, 96, 96);
+}
+
+.review-delete-button {
+  width: 34px;
+  margin-left: 2.5px;
+  font-size: 9pt;
+  background-color: black;
+  border: solid 3px black;
+  color: #fff5f4;
+  border-radius: 5px;
+}
+
+.review-delete-button:hover {
+  background-color: #ff5858;
+  border: solid 3px #ff5858;
+  color: #fff5f4;
+  cursor: pointer;
+}
+
+.review-content:hover {
+  background-color: #fff5f4;
 }

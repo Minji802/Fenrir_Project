@@ -5,7 +5,7 @@ function showReviewPage() {
 
 function reviewUpdate() {
   alert("レビュー投稿機能は準備中です。少々お待ちください。");
-  window.close("reviewPage.ejs");
+  window.close("reviewPage.html");
 }
 
 /* Star Point*/

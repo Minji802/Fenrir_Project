@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      http-equiv="Content-Security-Policy"
+      content="upgrade-insecure-requests"
+    />
+    <title>飲食店詳細</title>
+    <link
+      rel="shortcut icon"
+      type="image/x-icon"
+      href="images/logo/favicon.ico"
+    />
+    <link rel="stylesheet" href="/css/detail-page.css" />
+    <link rel="stylesheet" href="/css/index.css" />
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDb4vTBtJ5eI4DOAJXj4ov7YSdM066-PQ0&callback=initMap&v=weekly"
+      defer
+    ></script>
+  </head>
+  <body>
+    <!-- HEADER 領域 -->
+    <header></header>
+
+    <!-- Main 領域  -->
+    <main>
+      <!--shop detail-->
+      <div id="detail-page">
+        <button class="detail-close-btn" onclick="history.go(-1);">x</button>
+        <div id="detail-shop"><%- shop %></div>
+      </div>
+    </main>
+
+    <!-- Footer 領域 -->
+    <footer></footer>
+  </body>
+  <!--shop list Page-->
+  <!--shop detail Page-->
+  <script src="/js/shop-detail.js"></script>
+  <script src="/js/review-page.js"></script>
+</html>
