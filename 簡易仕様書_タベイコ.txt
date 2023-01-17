@@ -6,7 +6,7 @@
 タベイコ
 
 ### 公開したアプリの URL（Store にリリースしている場合）
-https://minji802.github.io/Fenrir_Project/
+https://minji802.github.io/tabeiko/
 
 ### 該当プロジェクトのリポジトリ URL（GitHub,GitLab など Git ホスティングサービスを利用されている場合）
 https://github.com/Minji802/Fenrir_Project
