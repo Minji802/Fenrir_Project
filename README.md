@@ -1,4 +1,5 @@
 <strong>Visit Website : [タベイコ](https://minji802.github.io/tabeiko/) https://minji802.github.io/tabeiko/ </strong>
+（↑ 現在、Node.jsを利用してアップグレードしています。 アップグレードした部分はまだ反映されていません。）
 
 詳細については、pdfファイルをご参照ください。<br>
 [タベイコPDF ファイル ダウンロード](https://github.com/Minji802/Fenrir_Project/files/10148695/_.pdf)<br>
