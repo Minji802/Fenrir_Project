@@ -1,4 +1,4 @@
-<strong>Visit Website : [タベイコ](https://minji802.github.io/Fenrir_Project/) https://minji802.github.io/Fenrir_Project/</strong>
+<strong>Visit Website : [タベイコ](https://minji802.github.io/tabeiko/) https://minji802.github.io/tabeiko/ </strong>
 
 詳細については、pdfファイルをご参照ください。<br>
 [タベイコPDF ファイル ダウンロード](https://github.com/Minji802/Fenrir_Project/files/10148695/_.pdf)<br>
