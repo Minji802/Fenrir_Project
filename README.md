@@ -1,4 +1,4 @@
-<strong>Visit Website : [タベイコ](https://minji802.github.io/tabeiko/) https://minji802.github.io/tabeiko/ </strong>
+<strong>Visit Website : [タベイコ](https://minji802.github.io/tabeiko/) https://minji802.github.io/tabeiko/ </strong><br>
 （↑ 現在、Node.jsを利用してアップグレードしています。 アップグレードした部分はまだ反映されていません。）
 
 詳細については、pdfファイルをご参照ください。<br>
